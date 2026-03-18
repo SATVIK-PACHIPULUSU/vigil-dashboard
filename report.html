@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VIGIL | Submit Report</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">VIGIL</div>
+        <ul class="nav-links">
+            <li><a href="index.html">DASHBOARD</a></li>
+            <li><a href="report.html" class="active">REPORT</a></li>
+            <li><a href="contacts.html">CONTACTS</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-wrapper">
+        <section class="form-container">
+            <h2>SUBMIT FLASH REPORT</h2>
+            <p class="sub-text">ENCRYPTED UPLOAD // ZONE 4-ALPHA</p>
+
+            <div class="input-group">
+                <label>LOCATION</label>
+                <div class="location-bar">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <input type="text" id="coords" value="DETECTING GPS..." readonly>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>INCIDENT CLASSIFICATION</label>
+                <div class="classification-grid">
+                    <button class="class-btn" onclick="selectType(this, 'Fire')"><i
+                            class="fa-solid fa-fire"></i><span>FIRE</span></button>
+                    <button class="class-btn" onclick="selectType(this, 'Flood')"><i
+                            class="fa-solid fa-droplet"></i><span>FLOOD</span></button>
+                    <button class="class-btn" onclick="selectType(this, 'Medical')"><i
+                            class="fa-solid fa-heart-pulse"></i><span>MEDICAL</span></button>
+                    <button class="class-btn" onclick="selectType(this, 'Other')"><i
+                            class="fa-solid fa-circle-exclamation"></i><span>OTHER</span></button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>SITUATION REPORT</label>
+                <textarea id="sitReport" rows="4" placeholder="DESCRIBE CONDITIONS..."></textarea>
+            </div>
+
+            <div id="error-msg" class="validation-text"></div>
+            <button class="btn-report" onclick="validateReport()">SUBMIT REPORT — HOLD TO CONFIRM</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
