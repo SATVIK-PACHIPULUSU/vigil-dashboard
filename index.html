@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="VIGIL: Visual Intelligence & Geographic Incident Logging. Tactical disaster monitoring.">
     <title>VIGIL | Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<body>
-    <nav class="navbar">
-        <div class="logo"><i class="fa-solid fa-shield-halved"></i> VIGIL <small>LIVE</small></div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">DASHBOARD</a></li>
-            <li><a href="report.html">REPORT</a></li>
-            <li><a href="contacts.html">CONTACTS</a></li>
-        </ul>
-        <div id="clock" class="system-time">00:00:00 HRS</div>
+<body class="bg-black text-white">
+    <nav class="navbar navbar-expand-lg border-bottom border-secondary px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand text-danger fw-bold" href="index.html">VIGIL <small class="text-white opacity-50">LIVE</small></a>
+            <div class="ms-auto d-flex gap-4">
+                <a href="index.html" class="text-white text-decoration-none border-bottom border-danger">DASHBOARD</a>
+                <a href="report.html" class="text-white text-decoration-none opacity-50">REPORT</a>
+                <a href="contacts.html" class="text-white text-decoration-none opacity-50">CONTACTS</a>
+            </div>
+            <div id="clock" class="ms-4 font-monospace">00:00:00 HRS</div>
+        </div>
     </nav>
 
-    <div class="dashboard-grid">
-        <aside class="sidebar">
-            <h3>LIVE INTEL</h3>
-            <div id="alerts-list">
+    <main class="container-fluid p-4">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h6 class="text-uppercase tracking-widest opacity-50 mb-3">Recent Intel</h6>
+                <div id="alerts-list" class="overflow-auto" style="max-height: 70vh;">
+                    </div>
             </div>
-        </aside>
-        <main class="map-container">
-            <div id="map"></div>
-            <div class="map-overlay-stats">
-                <div class="stat"><span class="val">12</span><span class="lbl">UNITS</span></div>
-                <div class="stat"><span class="val">03</span><span class="lbl">ACTIVE</span></div>
+            <div class="col-md-8">
+                <div id="map" style="height: 70vh; border: 1px solid #333; border-radius: 4px;"></div>
             </div>
-        </main>
-    </div>
-
-    <footer class="ticker-wrap">
-        <div class="ticker-label">INTEL</div>
-        <div class="ticker" id="ticker-content"></div>
-    </footer>
+        </div>
+    </main>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="map.js"></script>
-    <script src="alerts.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
